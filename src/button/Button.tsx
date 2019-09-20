@@ -1,59 +1,42 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
-import { Wave, classes } from '../utils'  
-import Icon from '../icon/Icon'
-import './style'
+import { ButtonProps } from '../../types/button.d'
+import cx from 'classnames'
+import { Wave } from '../utils'  
+import Icon from '../icon/Icon' 
+import './style' 
 
-export interface ButtonProps {  
-  icon?: string
-  position?: 'left' | 'right'
-  size?: 'small' | 'medium' | 'large'
-  type?: 'default' | 'dashed' | 'primary' | 'danger'
-  ghost?: boolean
-  htmlType?: 'button' | 'submit' | 'reset'
-  loading?: boolean
-  onClick?: React.MouseEventHandler
-  disabled?: boolean
-  onMouseEnter?: React.MouseEventHandler
-  onMouseLeave?: React.MouseEventHandler
-  onFocus?: React.FocusEventHandler
-  onBlur?: React.FocusEventHandler
-  className?: string
-  style?: React.CSSProperties
-}
-
-const componentName = 'Button'
+const componentName = 'cl-button'
 
 class Button extends React.Component<ButtonProps> {
-  public static displayName = componentName
-
+  // public 共有变量，可以继承访问，类似于 vue 中 props 默认值
   public static defaultProps = {
     position: 'left',
-    size: 'medium',
-    type: 'default',
+    size: 'default',
+    type: 'primary',
     ghost: false,
     htmlType: 'button',
     loading: false,
-    disabled: false
+    disabled: false,
+    onClick: () => {}
   }
-
+  // 类似于 vue 的props
   public static propTypes = {
     icon: PropTypes.string,
     position: PropTypes.oneOf(['left', 'right']),
-    size: PropTypes.oneOf(['small', 'medium', 'large']),
+    size: PropTypes.oneOf(['small', 'default', 'large']),
     type: PropTypes.oneOf(['default', 'dashed', 'primary', 'danger']),
     ghost: PropTypes.bool,
     htmlType: PropTypes.oneOf(['button', 'submit', 'reset']),
     loading: PropTypes.bool,
     onClick: PropTypes.func,
     disabled: PropTypes.bool,
-    className: PropTypes.string,
+    className: PropTypes.string, 
     style: PropTypes.object
   }
-
   public renderIcon = () => {
     const { icon, size, loading } = this.props
-    const className = classes(componentName, 'icon', [size], { loading })
+    const className = cx('icon', [size], { loading })
     return loading ? (
       <Icon name="loading" className={className} />
     ) : (
@@ -77,7 +60,7 @@ class Button extends React.Component<ButtonProps> {
       children,
       ...rest
     } = this.props
-    const buttonClassName = classes(cn, '', [position, size, type, className], {
+    const buttonClassName = cx(cn, [position, size, type, className], {
       ghost,
       disabled
     })
@@ -92,7 +75,7 @@ class Button extends React.Component<ButtonProps> {
           {...rest}  
         >
           {this.renderIcon()}
-          <span className={classes(cn, 'inner')}>{children}</span>
+          <span className={cx(`${cn}-inner`)}>{children}</span>
         </button>
       </Wave>
     )

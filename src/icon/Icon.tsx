@@ -1,23 +1,17 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
-import { classes } from '../utils'
+import cx from 'classnames'
+import { IconProps } from '../../types/icon'
 import '../utils/svg.js'
 import './style'
 
-export interface IconProps extends React.SVGAttributes<SVGElement> {
-  name: string
-  size?: number
-  className?: string
-  style?: React.CSSProperties  
-}
-
-const componentName = 'Icon'
+const componentName = 'cl-icon'
 
 const Icon: React.FunctionComponent<IconProps> = props => {
   const { className, size, style, name, children, ...rest } = props
   return (
     <svg
-      className={classes(componentName, '', [className])}
+      className={cx(componentName, [className])}
       aria-hidden="true"
       style={Object.assign({}, style, {
         width: size + 'px',
@@ -30,7 +24,6 @@ const Icon: React.FunctionComponent<IconProps> = props => {
   )
 }
 
-Icon.displayName = componentName
 
 Icon.defaultProps = {
   size: 16
