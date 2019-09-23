@@ -4,6 +4,11 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
+
+function resolve() {
+    return path.resolve(__dirname, '..')
+  }
+
 module.exports = {
     mode: "development", 
     entry: {
@@ -19,7 +24,11 @@ module.exports = {
     },
     devtool: "source-map",
     resolve: {
-        extensions: [".ts", '.tsx', '.js', '.json']
+        extensions: [".ts", '.tsx', '.js', '.json'],
+        alias: {
+            src: resolve() + '/src',
+            types: resolve() + '/types'
+          }
     },
     optimization: {
         minimizer: [

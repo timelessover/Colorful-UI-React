@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import cx from 'classnames'
-import { IconProps } from '../../types/icon'
+import { IconProps } from 'types/icon'
 import '../utils/svg.js'
 import './style'
 

@@ -8,10 +8,8 @@ interface IWaveProps {
   closeWave?: boolean;
 }
 
-const componentName = "Wave";
 
 class Wave extends React.Component<IWaveProps> {
-  public static displayName = componentName;
 
   public static defaultProps = {
     closeWave: false
