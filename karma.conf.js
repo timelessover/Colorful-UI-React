@@ -72,6 +72,6 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity,
-    webpack: require('./webpack/webpack.dev.conf.js')
+    webpack: require('./webpack/webpack.test.conf.js')
     })
 }

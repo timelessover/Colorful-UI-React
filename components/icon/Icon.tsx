@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import cx from 'classnames'
 import { IconProps } from 'types/icon'
-import '../utils/svg.js'
+import '../utils/svg'
 import './style'
 
 const componentName = 'cl-icon'

@@ -12,7 +12,7 @@ function resolve() {
 module.exports = {
     mode: "development", 
     entry: {
-        index: "./src/index.tsx",
+        index: "./components/index.tsx",
     },
     output: {
         filename: 'js/index.js',            
@@ -26,7 +26,7 @@ module.exports = {
     resolve: {
         extensions: [".ts", '.tsx', '.js', '.json'],
         alias: {
-            src: resolve() + '/src',
+            components: resolve() + '/components',
             types: resolve() + '/types'
           }
     },
@@ -82,13 +82,13 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         name: '[path][name].[ext]',
-                        context: 'src', 
+                        context: 'components', 
                         publicPath: "../"
                     },
                     loader: 'url-loader',
                     options: {
                         limit: 10000,
-                        context: 'src',
+                        context: 'components',
                         name: '[path][name].[hash:7].[ext]'
                     }
                 }]

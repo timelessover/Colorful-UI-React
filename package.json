@@ -4,7 +4,7 @@
   "description": "React-UI框架",
   "main": "index.js",
   "scripts": {
-    "test": "",
+    "test":  "./node_modules/karma/bin/karma start",
     "build": "rm -rf dist && webpack --config webpack/webpack.dev.conf.js",
     "serve": "webpack-dev-server",
     "start": "webpack-dev-server --config webpack/webpack.dev.conf.js --open",

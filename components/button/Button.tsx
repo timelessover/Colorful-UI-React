@@ -1,6 +1,6 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
-import { ButtonProps } from 'types/button.d'
+import { ButtonProps } from 'types/button'
 import cx from 'classnames'
 import { Wave } from '../utils'  
 import Icon from '../icon/Icon' 
