@@ -23,10 +23,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   # commit
   git add -A
   git commit -m "message: $VERSION"
-#   npm version $VERSION --message "feat: $VERSION"
 
-#   # publish
-#   git push origin refs/tags/v$VERSION
   git push
 #   npm publish
 fi

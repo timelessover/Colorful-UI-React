@@ -16,11 +16,11 @@ module.exports = {
     },
     output: {
         filename: 'js/index.js',            
-        path: path.resolve(__dirname, 'dist') 
+        path: path.resolve(__dirname, '../dist') 
     },
     devServer: { 
         hot: true,
-        contentBase: path.resolve(__dirname, 'dist') 
+        contentBase: path.resolve(__dirname, '../dist') 
     },
     devtool: "source-map",
     resolve: {
