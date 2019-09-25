@@ -1,7 +1,8 @@
 export interface ButtonProps {
+  cn?: string
   icon?: string
   position?: 'left' | 'right'
-  size?: 'small' | 'medium' | 'large'
+  size?: 'small' | 'default' | 'large'
   type?: 'default' | 'dashed' | 'primary' | 'danger'
   ghost?: boolean
   htmlType?: 'button' | 'submit' | 'reset'
@@ -14,4 +15,5 @@ export interface ButtonProps {
   onBlur?: React.FocusEventHandler
   className?: string
   style?: React.CSSProperties
+  children?: string
 }

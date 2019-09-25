@@ -1,4 +1,5 @@
 export interface InputProps {
+    type?: string
     value?: string
     defaultValue?: string
     placeholder?: string

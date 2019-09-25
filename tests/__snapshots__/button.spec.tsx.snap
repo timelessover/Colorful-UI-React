@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render button render default 1`] = `
+<div>
+  <button
+    class="cl-button left default primary"
+    type="button"
+  >
+    <span
+      class="cl-button-inner"
+    />
+  </button>
+</div>
+`;

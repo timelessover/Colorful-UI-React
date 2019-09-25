@@ -2,7 +2,7 @@ import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import cx from 'classnames'
 import './style'
-import {InputProps,InputState} from 'types/input'
+import { InputProps, InputState } from 'types/input'
 
 
 
@@ -13,11 +13,12 @@ class Input extends React.Component<InputProps, InputState> {
   public static defaultProps = {
     disabled: false,
     error: false,
-    readonly: false
+    readonly: false,
   }
 
   public static propTypes = {
     value: PropTypes.string,
+    type: PropTypes.string,
     defaultValue: PropTypes.string,
     placeholder: PropTypes.string,
     style: PropTypes.object,
@@ -103,7 +104,8 @@ class Input extends React.Component<InputProps, InputState> {
       error,
       onFocus,
       onBlur,
-      readonly
+      readonly,
+      type
     } = this.props
     const { derivedValue } = this.state
     const labelClassName = cx(`${cn}-wrapper`, [className], {
@@ -121,8 +123,8 @@ class Input extends React.Component<InputProps, InputState> {
             {typeof addonBefore === 'string' ? (
               <span className="before-string">{addonBefore}</span>
             ) : (
-              addonBefore
-            )}
+                addonBefore
+              )}
           </div>
         )}
         {prefix && (
@@ -130,13 +132,13 @@ class Input extends React.Component<InputProps, InputState> {
             {typeof prefix === 'string' ? (
               <span className="prefix-string">{prefix}</span>
             ) : (
-              prefix
-            )}
+                prefix
+              )}
           </span>
         )}
         <input
           className="cl-input"
-          type="text"
+          type={type}
           placeholder={placeholder || ''}
           onChange={this.handleChange}
           onKeyDown={this.handleKeyDown}
@@ -153,8 +155,8 @@ class Input extends React.Component<InputProps, InputState> {
             {typeof suffix === 'string' ? (
               <span className="suffix-string">{suffix}</span>
             ) : (
-              suffix
-            )}
+                suffix
+              )}
           </span>
         )}
         {addonAfter && (
@@ -162,8 +164,8 @@ class Input extends React.Component<InputProps, InputState> {
             {typeof addonAfter === 'string' ? (
               <span className="after-string">{addonAfter}</span>
             ) : (
-              addonAfter
-            )}
+                addonAfter
+              )}
           </div>
         )}
       </label>

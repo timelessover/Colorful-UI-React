@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types'
 import cx from 'classnames'
 import './style'
 import { AffixProps } from 'types/affix'
-import {throttle}from '../utils'
+import { throttle } from '../utils'
 
 const componentName = 'cl-affix'
 
@@ -13,18 +13,13 @@ class Affix extends React.Component<AffixProps> {
     distance: 0
   }
 
-  public static propTypes = {
-    distance: PropTypes.number,
-    className: PropTypes.string,
-    style: PropTypes.object
-  }
 
   private top: number = 0
   private wrapperRef: HTMLDivElement
   private affixRef: HTMLDivElement
 
   public componentDidMount() {
-    window.addEventListener('scroll', throttle(this.handleScroll,20))
+    window.addEventListener('scroll', throttle(this.handleScroll, 20))
     this.setTop()
   }
 

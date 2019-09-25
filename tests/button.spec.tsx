@@ -1,12 +1,12 @@
 import * as React from 'react'
 import { render } from '@testing-library/react'
 import Button from '../components/button/Button'
-import { expect } from 'chai'
 
 describe('render button', () => {
   it('render default', () => {
-    const wrapper = 2
-    expect(wrapper === 3).to.be.false
+    const wrapper = render(<Button/>)
+    // console.log(wrapper.container)
+    expect(wrapper.container).toMatchSnapshot()
   })
-}
+ }
 )

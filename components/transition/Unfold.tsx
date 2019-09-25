@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import * as PropTypes from 'prop-types'
-import {UnfoldProps,TransitionEffect,PrevCssProp,LeaveTo,PrevSize} from 'types/transtion'
+import { UnfoldProps, TransitionEffect, PrevCssProp, LeaveTo, PrevSize } from 'types/transtion'
 
 
 const componentName = 'Unfold'
