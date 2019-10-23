@@ -8,7 +8,7 @@ import CLInput from './input/Input';
 function App(props) {
     return (
         <div>
-            <CLInput />
+            <CLInput value='' placeholder="请输入申请金额" onChange={(b)=>{console.log(b)}}/> 
             <CLButton icon="setting">确定</CLButton>
         </div>
     )

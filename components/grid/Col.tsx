@@ -1,26 +1,22 @@
 import * as React from 'react'
 import * as PropTypes from 'prop-types'
 import cx from 'classnames'
-import {ColProps} from 'types/col'
+import { IColProps } from 'types/grid'
 
-const componentName = 'cl-col'
 
-class Col extends React.Component<ColProps> {
-  public static displayName = componentName
+const Col = (userProps: IColProps) => {
+  const cn = 'cl-col'
 
-  public static defaultProps = {
+  const defaultProps = {
     gutter: 0
   }
 
-  public static propTypes = {
-    gutter: PropTypes.number,
-    span: PropTypes.number,
-    offset: PropTypes.number,
-    className: PropTypes.string,
-    style: PropTypes.object
+  const props = {
+    ...userProps,
+    ...defaultProps
   }
 
-  public getColClassName = (): string[] => {
+  const getColClassName = (): string[] => {
     const {
       gutter,
       span,
@@ -29,7 +25,7 @@ class Col extends React.Component<ColProps> {
       className,
       style,
       ...options
-    } = this.props
+    } = props
     const classNameArr = [`col-span-${span}`, `col-offset-${offset}`]
     Object.keys(options).forEach(key => {
       if (options[key]) {
@@ -43,36 +39,32 @@ class Col extends React.Component<ColProps> {
     }
     return classNameArr
   }
-
-  public render() {
-    const cn = componentName
-    const {
-      gutter,
-      span,
-      offset,
-      sm,
-      md,
-      lg,
-      xl,
-      className,
-      style,
-      children,
-      ...rest
-    } = this.props
-    return (
-      <div
-        className={cx(cn, this.getColClassName())}
-        {...rest}
-        style={{
-          paddingLeft: `${gutter! / 2}px`,
-          paddingRight: `${gutter! / 2}px`,
-          ...style
-        }}
-      >
-        {children}
-      </div>
-    )
-  }
+  const {
+    gutter,
+    span,
+    offset,
+    sm,
+    md,
+    lg,
+    xl,
+    className,
+    style,
+    children,
+    ...rest
+  } = props
+  return (
+    <div
+      className={cx(cn, '', getColClassName())}
+      {...rest}
+      style={{
+        paddingLeft: `${gutter! / 2}px`,
+        paddingRight: `${gutter! / 2}px`,
+        ...style
+      }}
+    >
+      {children}
+    </div>
+  )
 }
 
 export default Col

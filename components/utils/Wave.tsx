@@ -1,6 +1,6 @@
+
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import * as PropTypes from "prop-types";
 import cx from "classnames";
 import "../style/wave.scss";
 
@@ -13,10 +13,6 @@ class Wave extends React.Component<IWaveProps> {
 
   public static defaultProps = {
     closeWave: false
-  };
-
-  public static propTypes = {
-    closeWave: PropTypes.bool
   };
 
   private node: HTMLElement;

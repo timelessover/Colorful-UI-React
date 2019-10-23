@@ -5,20 +5,20 @@ import { Wave } from '../utils'
 import Icon from '../icon/Icon'
 import './style'
 
-const componentName = 'cl-button'
 
-const defaultProps: ButtonProps = {
-  cn:componentName,
-  position: 'left',
-  size: 'default',
-  type: 'primary',
-  htmlType: 'button',
-  loading: false,
-  disabled: false,
-  onClick: () => { }
-}
 
-function Button(userProps: ButtonProps, ref: any) {
+function Button(userProps: ButtonProps) {
+  const cn = 'cl-button'
+
+  const defaultProps: ButtonProps = {
+    position: 'left',
+    size: 'default',
+    type: 'primary',
+    htmlType: 'button',
+    loading: false,
+    disabled: false,
+    onClick: () => { }
+  }
   const props = {
     ...defaultProps,
     ...userProps
@@ -33,7 +33,6 @@ function Button(userProps: ButtonProps, ref: any) {
       )
   }
   const {
-    cn,
     position,
     icon,
     loading,

@@ -4,7 +4,6 @@ export interface ButtonProps {
   position?: 'left' | 'right'
   size?: 'small' | 'default' | 'large'
   type?: 'default' | 'dashed' | 'primary' | 'danger'
-  ghost?: boolean
   htmlType?: 'button' | 'submit' | 'reset'
   loading?: boolean
   onClick?: React.MouseEventHandler

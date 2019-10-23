@@ -4,7 +4,6 @@ export interface InputProps {
     defaultValue?: string
     placeholder?: string
     onChange?: React.ChangeEventHandler
-    onKeyDown?: React.KeyboardEventHandler
     onPressEnter?: React.KeyboardEventHandler
     onFocus?: React.FocusEventHandler
     onBlur?: React.FocusEventHandler
