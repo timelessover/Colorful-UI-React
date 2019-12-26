@@ -1,0 +1,16 @@
+.cl-tabs--header {
+    display: flex;
+    list-style: none;
+    width: 200px;
+    justify-content: space-between;
+    > li{
+        cursor: pointer;
+        &.active {
+            color: red;
+        }
+    }
+    .cl-tab__bar {
+        height: 2px;
+        background: blue;
+    }
+}
